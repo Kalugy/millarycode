@@ -1,6 +1,6 @@
 const Features = () => (
   <section id="features" className="py-16 moving-gradient">
-    <div className="mx-8 mx-auto px-4">
+    <div className="mx-8 md:mx-9 px-4">
       <h3 className="text-4xl text-gray-100 font-extrabold text-center mb-12">
         Track Every Aspect of Your Life
       </h3>
@@ -8,7 +8,7 @@ const Features = () => (
         Manage your activities, goals, and personal growth all in one place.
       </p>
 
-      <div className="grid gap-8 md:grid-cols-3 lg:gap-8 lg:grid-cols-6">
+      <div className="grid gap-8 md:grid-cols-3  xl:gap-8 xl:grid-cols-6">
         <FeatureCard 
           title="Interactive Calendar" 
           description="Organize your time efficiently with a calendar that adapts to your goals." 
