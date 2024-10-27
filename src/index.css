@@ -50,3 +50,21 @@ button.secondary {
 .list-item {
   @apply p-4 bg-white shadow flex justify-between items-center rounded;
 }
+
+@keyframes gradient-move {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 60% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.moving-gradient {
+  @apply bg-gradient-to-l from-blue-600 to-green-500;
+  background-size: 200% 200%; /* Allow the gradient to move */
+  animation: gradient-move 4s ease infinite; /* 4s loop animation */
+}

@@ -1,12 +1,14 @@
 const Features = () => (
-  <section id="features" className="py-16 bg-gray-200">
-    <div className="container mx-auto px-4">
-      <h3 className="text-4xl font-extrabold text-center mb-12">Track Every Aspect of Your Life</h3>
-      <p className="text-center text-gray-600 mb-8">
+  <section id="features" className="py-16 moving-gradient">
+    <div className="mx-8 mx-auto px-4">
+      <h3 className="text-4xl text-gray-100 font-extrabold text-center mb-12">
+        Track Every Aspect of Your Life
+      </h3>
+      <p className="text-center text-gray-200 mb-8">
         Manage your activities, goals, and personal growth all in one place.
       </p>
 
-      <div className="grid gap-8 md:grid-cols-3">
+      <div className="grid gap-8 md:grid-cols-3 lg:gap-8 lg:grid-cols-6">
         <FeatureCard 
           title="Interactive Calendar" 
           description="Organize your time efficiently with a calendar that adapts to your goals." 
@@ -43,10 +45,13 @@ const Features = () => (
 );
 
 const FeatureCard = ({ title, description, icon }) => (
-  <div className="bg-white p-8 shadow-md rounded-lg text-center">
-    <div className="text-6xl mb-4">{icon}</div>
-    <h4 className="text-2xl font-bold mb-2">{title}</h4>
-    <p className="text-gray-600">{description}</p>
+  <div className="relative group overflow-hidden rounded-xl shadow-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl">
+    <div className="absolute inset-0 bg-white opacity-60 "></div>
+    <div className="relative p-8 z-10 text-black">
+      <div className="text-5xl mb-4">{icon}</div>
+      <h4 className="text-2xl justify-center font-bold mb-2">{title}</h4>
+      <p className="text-gray-800 text-justify">{description}</p>
+    </div>
   </div>
 );
 
