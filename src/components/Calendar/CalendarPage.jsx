@@ -53,7 +53,7 @@ const CalendarPage = () => {
       <Description />
 
       {/* Right side with the 3D calendar */}
-      <div className="flex-1 h-96 m-20 md:h-full bg-opacity-50 bg-slate-200 ">
+      <div className="flex-1 h-96 m-5 lg-20 md:h-full bg-opacity-50 bg-slate-200 ">
         <ThreeDCalendar />
       </div>
     </div>
