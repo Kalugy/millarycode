@@ -6,7 +6,11 @@ import CalendarPage from './components/Calendar/CalendarPage';
 import FAQs from "./components/FAQ/FAQ";
 //import Review from "./components/Review/Review";
 
+import useAnalytics from './hooks/useAnalytics';
+
+
 function App() {
+  useAnalytics(); // Initialize Google Analytics
 
   return (
     <div>
