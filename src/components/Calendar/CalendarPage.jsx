@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import ThreeDCalendar from './ThreeDCalendar';
 import FaArrowsAlt from '../../assets/icons/IdeaIcon'; // Import an icon from react-icons
 
-
+import DraggableDiv from './DraggableDiv';
+import HandCursorDiv from './HandCursorDiv';
 const Description = () => {
     const [tooltipVisible, setTooltipVisible] = useState(false);
 
@@ -51,9 +52,10 @@ const CalendarPage = () => {
     <div className="flex flex-col md:flex-row w-full h-full ">
       {/* Left side with text and description */}
       <Description />
+      <HandCursorDiv/>
 
       {/* Right side with the 3D calendar */}
-      <div className="flex-1 h-96 m-5 md-20 md:h-full bg-opacity-50 bg-slate-200 ">
+      <div className="flex-1 h-96 m-5 md-20 md:h-full bg-opacity-50 bg-slate-200 cursor-grab ">
         <ThreeDCalendar />
       </div>
     </div>

@@ -85,3 +85,27 @@ button.secondary {
     box-shadow: 0 0 0 0 rgba(255, 215, 0, 0);
   }
 }
+
+/* File: src/components/handCursor.css */
+
+/* Open hand SVG cursor for hover */
+.cursor-svg-open-hand {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 8a4 4 0 0 0-8 0v8a2 2 0 0 0 4 0V8m-6 0v8a2 2 0 0 0 4 0V8M12 8V4'/%3E%3C/svg%3E"), auto;
+}
+
+/* Closed hand SVG cursor for click (active state) */
+.cursor-svg-open-hand:active {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M8 11h3v5a2 2 0 0 0 4 0v-5h3'/%3E%3C/svg%3E"), auto;
+}
+
+/* File: src/components/draggableHand.css */
+
+.hand-icon {
+  position: absolute;
+  cursor: grab;
+  transition: transform 0.1s ease-in-out;
+}
+
+.hand-icon:active {
+  cursor: grabbing;
+}
