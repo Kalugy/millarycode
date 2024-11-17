@@ -1,45 +1,25 @@
-import { useState } from 'react';
 import ThreeDCalendar from './ThreeDCalendar';
-import FaArrowsAlt from '../../assets/icons/IdeaIcon'; // Import an icon from react-icons
 
-import DraggableDiv from './DraggableDiv';
-import HandCursorDiv from './HandCursorDiv';
+import HandIcon from '../../assets/icons/HandIcon';
+import DragIcon from '../../assets/icons/DragIcon';
 const Description = () => {
-    const [tooltipVisible, setTooltipVisible] = useState(false);
-
-    const handleIconClick = () => {
-      setTooltipVisible(!tooltipVisible);
-    };
-    const [animationStopped, setAnimationStopped] = useState(true);
-
-    const handleMouseEnter = () => {
-        setAnimationStopped(true); // Stop animation on hover
-    };
+    
 
     return (
       <div className="p-6 ml-8 flex flex-col gap-5 items-start sm:flex-1 md:w-2/3 lg:w-1/2 xl:w-1/3 text-white">
-       <h1 className=" flex gap-4 text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
-      Control of Your Time
-      <div
-         className={`hidden sm:inline-flex items-center relative group ${
-            animationStopped ? '' : 'ring-animation'
-        } `}
-        onMouseEnter={handleMouseEnter}
-      >
-        {/* Icons */}
-        <FaArrowsAlt className="text-gray-600 cursor-pointer text-2xl hover:text-gray-800" />
-       
-
-        {/* Tooltip */}
-        <span className=" -left-8 top-9 opacity-0 group-hover:opacity-100 text-gray-800 text-sm font-semibold bg-white p-1 rounded shadow-lg transition-opacity duration-300 w-max sm:w-auto">
-          Drag Calendar
-        </span>
-      </div>
-    </h1>
+        <h1 className=" flex gap-4 text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
+          Control of Your Time
+        </h1>
         <p className="text-sm sm:text-base md:text-lg mb-4">
-          This calendar view highlights the current month, helping you track and manage your events effortlessly. 
-          You're in charge of your time, with dynamic updates and easy tracking features at your fingertips. 
+        - This calendar view highlights the current month, helping you track and manage your events effortlessly. 
         </p>
+        <p className="text-sm sm:text-base md:text-lg mb-4">
+        - Keep your finances in check with intuitive tracking features. Monitor your expenses.
+        </p>
+        <p className="text-sm sm:text-base md:text-lg mb-4">
+        - Stay on top of your favorite hobbies with personalized tracking. Record progress, set goals, and celebrate your achievements as you grow your passions.
+        </p>
+        
       </div>
     );
   };
@@ -48,16 +28,30 @@ const Description = () => {
 
 const CalendarPage = () => {
   return (
-    <div className="moving-gradient h-screen overflow-hidden">
-    <div className="flex flex-col md:flex-row w-full h-full ">
+    <div className="moving-gradient h-min-screen overflow-hidden">
+    <div className="flex flex-col items-center md:flex-row w-full h-full ">
       {/* Left side with text and description */}
       <Description />
-      <HandCursorDiv/>
+      {/* <HandCursorDiv/> */}
 
       {/* Right side with the 3D calendar */}
-      <div className="flex-1 h-96 m-5 md-20 md:h-full bg-opacity-50 bg-slate-200 cursor-grab ">
-        <ThreeDCalendar />
+      
+      <div className="md:w-80 flex-1 h-60 md-h-70 mx-16 md:min-h-96 shadow-md rounded-lg overflow-hidden">
+        {/* Header Section */}
+        <div className="text-xs text-gray-800  flex items-center">
+          <div className="flex flex-row items-center space-x-2 rounded bg-slate-200 bg-opacity-40 p-2">
+            <HandIcon className="w-5 h-5 md:w-7 md:h-7" color='#fff' />
+            <p className="text-sm font-semibold text-white md:text-base">Drag/Zoom to interact</p>
+            <DragIcon className="w-5 h-5 md:w-7 md:h-7" color='#fff' />
+          </div>
+        </div>
+
+        {/* Interactive 3D Calendar Section */}
+        <div className="flex-1 h-full bg-slate-200 bg-opacity-50 cursor-grab p-4">
+          <ThreeDCalendar />
+        </div>
       </div>
+
     </div>
     </div>
 
