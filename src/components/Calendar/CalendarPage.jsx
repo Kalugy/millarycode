@@ -36,7 +36,7 @@ const CalendarPage = () => {
 
       {/* Right side with the 3D calendar */}
       
-      <div className="md:w-80 flex-1 h-60 md-h-70 mx-16 md:min-h-96 shadow-md rounded-lg overflow-hidden">
+      <div className="w-72 md:w-96 h-96 flex-1 mx-16 md:mx-4 shadow-md rounded-lg overflow-hidden">
         {/* Header Section */}
         <div className="text-xs text-gray-800  flex items-center">
           <div className="flex flex-row items-center space-x-2 rounded bg-slate-200 bg-opacity-40 p-2">
@@ -47,7 +47,7 @@ const CalendarPage = () => {
         </div>
 
         {/* Interactive 3D Calendar Section */}
-        <div className="flex-1 h-full bg-slate-200 bg-opacity-50 cursor-grab p-4">
+        <div className="h-full bg-slate-200 bg-opacity-50 cursor-grab">
           <ThreeDCalendar />
         </div>
       </div>
