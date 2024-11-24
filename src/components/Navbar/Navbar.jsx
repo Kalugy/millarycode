@@ -90,7 +90,7 @@ const Navbar = () => {
           >
             Close
           </button>
-          <nav className="mt-8 space-y-4">
+          <nav className="mt-8 space-y-4" onClick={toggleMenu}>
             <a href="#home" className="block text-lg hover:text-gray-400">
               Home
             </a>
