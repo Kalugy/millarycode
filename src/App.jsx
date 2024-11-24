@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import CalendarPage from './components/Calendar/CalendarPage';
 import FAQs from "./components/FAQ/FAQ";
 //import Review from "./components/Review/Review";
+import Navbar from './components/Navbar/Navbar';
 
 import useAnalytics from './hooks/useAnalytics';
 
@@ -14,7 +15,9 @@ function App() {
 
   return (
     <div>
-      <Header />
+      
+      <Navbar />
+      <Header/>
       <CalendarPage />
       <Features />
       <Hero />

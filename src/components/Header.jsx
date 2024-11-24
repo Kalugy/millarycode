@@ -1,19 +1,13 @@
 
 const Header = () => (
-  <header className="h-screen moving-gradient text-white flex flex-col">
+  <header id="home" className="h-screen moving-gradient text-white flex flex-col">
     <div className=" ">
       <div className="flex ml-5 align-middle items-center">
 
       <img src="/images/test.png" alt="Logo" className="h-12" />
 
       <h1 className="text-3xl font-bold ml-2">Growvyn</h1>
-      {/* <nav>
-        <a href="#features" className="mx-4 text-white hover:text-green-300">Features</a>
-        <a href="#contact" className="mx-4 text-white hover:text-green-300">Contact</a>
-      </nav> */}
-
       </div>
-      
     </div>
 
     <div className="flex-grow flex items-center justify-center text-center">

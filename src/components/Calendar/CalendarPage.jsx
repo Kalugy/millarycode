@@ -28,7 +28,7 @@ const Description = () => {
 
 const CalendarPage = () => {
   return (
-    <div className="moving-gradient h-min-screen overflow-hidden">
+    <div id="about" className="moving-gradient h-min-screen overflow-hidden">
     <div className="flex flex-col items-center md:flex-row w-full h-full ">
       {/* Left side with text and description */}
       <Description />

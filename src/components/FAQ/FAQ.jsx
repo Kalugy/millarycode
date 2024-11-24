@@ -43,7 +43,7 @@ const FAQs = () => {
   };
 
   return (
-    <div className="moving-gradient overflow-hidden">
+    <div id="faq" className="moving-gradient overflow-hidden">
     <div className="m-4 p-2 sm:p-6 md:p-8 inset-0 bg-white opacity-80 rounded-lg shadow-md max-w-3xl sm:mx-auto">
       <h2 className="text-1xl md:text-3xl font-bold mb-4 text-center">Frequently Asked Questions</h2>
       {questions.map((faq, index) => (
