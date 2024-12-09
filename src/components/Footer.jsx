@@ -5,7 +5,7 @@ import InstagramIcon from '../assets/icons/InstagramIcon';
 import YouTubeIcon from '../assets/icons/YouTubeIcon';
 import DiscordIcon from '../assets/icons/DiscordIcon';
 import SocialIcon from '../assets/icons/SocialIcon';
-import { ThemeSelector } from "./Theme/ThemeSelector";
+import { ThemeSelectorButtons } from './Theme/ThemeSelector'
 
 const Footer = () => {
   const { theme, switchTheme } = useTheme();
@@ -15,13 +15,6 @@ const Footer = () => {
     { label: "About", href: "#about" },
     { label: "Feature", href: "#features" },
     { label: "FAQ", href: "#faq" },
-  ];
-
-  const themeButtons = [
-    { name: "A", theme: "default" },
-    { name: "A", theme: "dark" },
-    { name: "A", theme: "blue" },
-    { name: "A", theme: "green" },
   ];
 
   const socialMediaLinks = [
@@ -37,35 +30,17 @@ const Footer = () => {
     { href: "https://discord.gg/X8vddq9P", icon: <DiscordIcon />, label: "Discord" },
   ];
 
-  const buttonStyles = {
-    default: "bg-defaultBg text-defaultText",
-    dark: "bg-darkBg text-darkText",
-    blue: "bg-blueBg text-blueText",
-    green: "bg-greenBg text-greenText",
-  };
-
   return (
     <footer className="py-6">
       <div className=" w-100% flex flex-col gap-5 md:flex-row lg:justify-around">
         {/* Left Side: Site Info and Theme Buttons */}
         <div className="mb-4 md:mb-0 ">
-          <h4 className="text-xl font-bold mb-2">Growvyn</h4>
-          <p className="text-sm mb-4">Tracking your activities easier and grow wisely</p>
-          <div className="flex gap-2">
-          {themeButtons.map((button) => (
-            <button
-              key={button.theme}
-              onClick={() => switchTheme(button.theme)}
-              className={`px-3 py-1 rounded transition duration-300 transform ${
-                theme === button.theme
-                  ? "scale-105 border-2 border-blue-500 shadow-lg"
-                  : "opacity-75 hover:opacity-100"
-              } ${buttonStyles[button.theme]}`}
-            >
-              {button.name}
-            </button>
-          ))}
+          <div className="flex flex-row gap-2">
+            <img src="/images/newLogo.png" alt="Logo" className="h-6 rotate-[10deg]" />
+            <h4 className="text-xl font-bold mb-2">Growvyn</h4>
           </div>
+          <p className="text-sm mb-4">Tracking your activities easier and grow wisely</p>
+          <ThemeSelectorButtons/>
         </div>
 
         {/* Right Side: Quick Navigation */}

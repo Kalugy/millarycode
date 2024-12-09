@@ -6,7 +6,6 @@ export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState('default');
 
   const switchTheme = (themeName) => {
-    console.log('the', themeName)
     setTheme(themeName);
   };
 

@@ -2,7 +2,6 @@ import { useTheme } from "./Theme/ThemeContext";
 
 const Header = () => {
   const { theme } = useTheme();
-  // console.log(theme, 'tgg')
 
   return (
   <header id="home" className={`h-screen flex flex-col`}>

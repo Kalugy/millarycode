@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useTheme } from "../Theme/ThemeContext";
+import { ThemeSelectorButtons } from "../Theme/ThemeSelector";
 
 const Navbar = () => {
   const { theme } = useTheme();
@@ -67,7 +68,7 @@ const Navbar = () => {
         {/* Logo */}
         <div>
           <div className="flex ml-5 align-middle items-center">
-            <img src="/images/test.png" alt="Logo" className="h-12" />
+            <img src="/images/newLogo.png" alt="Logo" className="h-12 rotate-[10deg]" />
             <h1 className={`text-2xl font-bold ml-2 ${themeStyles[theme].navbarText}`}>
               Growvyn
             </h1>
@@ -121,15 +122,16 @@ const Navbar = () => {
         <ul className="flex flex-col items-center justify-center gap-6 h-full">
           {menuItems.map((item) =>
             item.isButton ? (
-              <li key={item.name}>
-                <a
-                  href={item.href}
-                  onClick={handleMenuClick} // Close the menu on click
-                  className={`px-6 py-3 rounded transition button-${theme} ${themeStyles[theme].navbarText} hover:opacity-90`}
-                >
-                  {item.name}
-                </a>
-              </li>
+              <></>
+              // <li key={item.name}>
+              //   <a
+              //     href={item.href}
+              //     onClick={handleMenuClick} // Close the menu on click
+              //     className={`px-6 py-3 rounded transition button-${theme} ${themeStyles[theme].navbarText} hover:opacity-90`}
+              //   >
+              //     {item.name}
+              //   </a>
+              // </li>
             ) : (
               <li key={item.name}>
                 <a
@@ -142,6 +144,7 @@ const Navbar = () => {
               </li>
             )
           )}
+          <ThemeSelectorButtons />
         </ul>
       </div>
     </nav>
