@@ -1,18 +1,11 @@
-/* src/index.css */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
-/* src/index.css */
-
-/* Import Tailwind's core styles */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* Custom styles for better layout and spacing */
 body {
-  @apply bg-green-800 text-black font-sans;
+  @apply bg-gray-700 font-sans;
 }
 
 h1 {
@@ -21,6 +14,20 @@ h1 {
 
 .container {
   @apply mx-auto max-w-2xl p-4;
+}
+
+.containers {
+  width: 100%;
+}
+@media (min-width: 640px) {
+  .containers {
+      max-width: 640px;
+  }
+}
+@media (min-width: 768px) {
+  .containers {
+      max-width: 768px;
+  }
 }
 
 button {
@@ -109,3 +116,86 @@ button.secondary {
 .hand-icon:active {
   cursor: grabbing;
 }
+
+
+/* THEME */
+
+@layer utilities {
+  .theme-default {
+    background-color: theme('colors.defaultBg');
+    color: theme('colors.defaultText');
+    padding: 20px;
+  }
+  .theme-dark {
+    background-color: theme('colors.darkBg');
+    color: theme('colors.darkText');
+    padding: 20px;
+  }
+  .theme-blue {
+    background-color: theme('colors.blueBg');
+    color: theme('colors.blueText');
+    padding: 20px;
+  }
+  .theme-green {
+    background-color: theme('colors.greenBg');
+    color: theme('colors.greenText');
+    padding: 20px;
+  }
+
+  
+  .button-default {
+    background-color: theme('colors.defaultBg');
+    color: theme('colors.defaultText');
+    border: 2px solid theme('colors.defaultText');
+  }
+  .button-dark {
+    background-color: theme('colors.darkBg');
+    color: theme('colors.darkText');
+    border: 2px solid theme('colors.darkText');
+  }
+  .button-blue {
+    background-color: theme('colors.blueBg');
+    color: theme('colors.blueText');
+    border: 2px solid theme('colors.blueText');
+  }
+  .button-green {
+    background-color: theme('colors.greenBg');
+    color: theme('colors.greenText');
+    border: 2px solid theme('colors.greenText');
+  }
+
+  .button-base {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  /* Hover Effects */
+  .button-default:hover {
+    background-color: theme('colors.defaultText');
+    color: theme('colors.defaultBg');
+    transform: scale(1.05);
+  }
+  .button-dark:hover {
+    background-color: theme('colors.darkText');
+    color: theme('colors.darkBg');
+    transform: scale(1.05);
+  }
+  .button-blue:hover {
+    background-color: theme('colors.blueText');
+    color: theme('colors.blueBg');
+    transform: scale(1.05);
+  }
+  .button-green:hover {
+    background-color: theme('colors.greenText');
+    color: theme('colors.greenBg');
+    transform: scale(1.05);
+  }
+
+}
+
+/* Buttons */
+

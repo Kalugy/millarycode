@@ -1,7 +1,7 @@
 // src/components/InstagramIcon.jsx
 import React from 'react';
 
-const InstagramIcon = ({ size = 18, color = 'currentColor', onClick }) => (
+const InstagramIcon = ({ size = 18, color = '#D62976', onClick }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"

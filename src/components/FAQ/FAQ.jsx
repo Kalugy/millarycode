@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { useTheme } from "../Theme/ThemeContext";
 const questions = [
     {
         question: "How does Growvyn track my daily activities?",
@@ -33,6 +33,22 @@ const FAQs = () => {
   // State to manage which question is currently open
   const [openIndex, setOpenIndex] = useState(null);
 
+  const { theme } = useTheme()
+
+  const bgClassesOuter = {
+    default: 'bg-defaultBg text-defaultText border-defaultHoverBg hover:bg-defaultHoverBg',
+    dark: 'bg-stone-600 text-darkText border-darkHoverBg hover:bg-darkHoverBg',
+    blue: 'bg-blueBg text-blueText border-blueHoverBg hover:bg-blueHoverBg',
+    green: 'bg-greenBg text-greenText border-greenHoverBg hover:bg-greenHoverBg',
+  };
+
+  const bgClasses = {
+    default: 'bg-defaultBg',
+    dark: 'bg-darkCustomBg', // Updated for dark theme
+    blue: 'bg-blueBg',
+    green: 'bg-greenBg',
+  };
+
   // Function to toggle the visibility of an individual answer
   const toggleAnswer = (index) => {
     if (openIndex === index) {
@@ -43,33 +59,29 @@ const FAQs = () => {
   };
 
   return (
-    <div id="faq" className="moving-gradient overflow-hidden">
-    <div className="m-4 p-2 sm:p-6 md:p-8 inset-0 bg-white opacity-80 rounded-lg shadow-md max-w-3xl sm:mx-auto">
-      <h2 className="text-1xl md:text-3xl font-bold mb-4 text-center">Frequently Asked Questions</h2>
-      {questions.map((faq, index) => (
-        <div key={index} className="mb-4">
-          <button
-            onClick={() => toggleAnswer(index)}
-            className="flex justify-between items-center w-full text-left text-md md:text-xl font-semibold text-gray-800 bg-gray-200 p-3 md:p-4 rounded hover:bg-gray-300 transition"
-          >
-            {faq.question}
-            <span className="ml-2">{openIndex === index ? "-" : "+"}</span>
-          </button>
-          {openIndex === index && (
-            <p className="text-gray-700 mt-2 p-3 md:p-4 bg-white rounded shadow">
-              {faq.answer}
-            </p>
-          )}
-        </div>
-      ))}
-    </div>
+    <div id="faq" className="overflow-hidden">
+      <div className={`${bgClasses[theme]} inset-0  m-4 p-2 sm:p-6 md:p-8 rounded-lg shadow-md max-w-3xl sm:mx-auto`}>
+        <h2 className="text-3xl md:text-3xl font-bold mb-4 text-center">Frequently Asked Questions</h2>
+        {questions.map((faq, index) => (
+          <div key={index} className="mb-4">
+            <button
+              onClick={() => toggleAnswer(index)}
+              className={`flex justify-between items-center w-full text-left text-md md:text-xl font-semibold ${bgClassesOuter[theme]} p-3 md:p-4 rounded transition shadow`}
+            >
+              {faq.question}
+              <span className="ml-2">{openIndex === index ? "-" : "+"}</span>
+            </button>
+            {openIndex === index && (
+              <p className={`mt-2 p-3 md:p-4 rounded `}>
+                {faq.answer}
+              </p>
+            )}
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
-
-
-
-
 
 
 export default FAQs;

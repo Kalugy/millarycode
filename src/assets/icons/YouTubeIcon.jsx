@@ -1,7 +1,7 @@
 // src/components/YouTubeIcon.jsx
 import React from 'react';
 
-const YouTubeIcon = ({ size = 24, color = 'currentColor', onClick }) => (
+const YouTubeIcon = ({ size = 24, color = '#FF0000', onClick }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
