@@ -5,14 +5,14 @@ const Features = () => {
 
   return(
   <section id="features" className="py-16">
-    <div className="mx-8 md:mx-9 px-4">
+    <div className="mx-1 md:mx-9 px-1 md:px-4">
       <h3 className="text-4xl font-extrabold text-center mb-12">
         Track Every Aspect of Your Life
       </h3>
       <p className="text-center mb-8">
         Manage your activities, goals, and personal growth all in one place.
       </p>
-      <div className="grid gap-8 md:grid-cols-3 xl:gap-8 xl:grid-cols-6">
+      <div className="grid gap-3 md:gap-8 md:grid-cols-3 xl:gap-8 xl:grid-cols-6">
         {features.map((feature, index) => (
           <FeatureCard
             key={index}
