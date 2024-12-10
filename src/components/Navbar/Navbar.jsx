@@ -113,6 +113,8 @@ const Navbar = () => {
           isMobileMenuOpen ? "translate-y-0" : "-translate-y-full"
         } ${themeStyles[theme].navbarBg} ${themeStyles[theme].navbarText}`}
       >
+        <BackgroundCircle />
+          
         <button
           onClick={() => setMobileMenuOpen(false)}
           className={`absolute top-4 right-6 text-3xl ${themeStyles[theme].navbarText}`}
@@ -148,6 +150,17 @@ const Navbar = () => {
         </ul>
       </div>
     </nav>
+  );
+};
+
+const BackgroundCircle = () => {
+  return (
+    <div
+      className="absolute top-5 left-5 w-12 h-12 bg-cover rotate-12 bg-center"
+      style={{
+        backgroundImage: "url('/images/newLogo.png')", // Replace with your image path
+      }}
+    ></div>
   );
 };
 
