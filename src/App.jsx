@@ -9,7 +9,7 @@ import Navbar from './components/Navbar/Navbar';
 import useAnalytics from './hooks/useAnalytics';
 import { useTheme } from './components/Theme/ThemeContext';
 // import { ThemeSelector } from './components/Theme/ThemeSelector';
-
+// import ButterflyScene from './components/ButterflyScene';
 
 function App() {
   useAnalytics(); // Initialize Google Analytics
@@ -18,6 +18,7 @@ function App() {
   return (
       <div className={`theme-${theme}`}>
         {/* <ThemeSelector/> */}
+        {/* <ButterflyScene/> */}
         <Navbar />
         <Header/>
         <CalendarPage />
