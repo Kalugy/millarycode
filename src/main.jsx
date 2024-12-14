@@ -8,10 +8,10 @@ import { ThemeProvider } from './components/Theme/ThemeContext';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter> 
+    {/* <BrowserRouter>  */}
       <ThemeProvider>
         <App />
       </ThemeProvider>
-    </BrowserRouter>
+    {/* </BrowserRouter> */}
   </StrictMode>,
 )

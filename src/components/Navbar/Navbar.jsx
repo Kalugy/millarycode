@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useTheme } from "../Theme/ThemeContext";
 import { ThemeSelectorButtons } from "../Theme/ThemeSelector";
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
   const { theme } = useTheme();
@@ -8,9 +9,9 @@ const Navbar = () => {
   const [isScrolled, setScrolled] = useState(false);
 
   const menuItems = [
-    { name: "Home", href: "#home" },
-    { name: "Team", href: "#team" },
-    { name: "Whitepaper", href: "#whitepaper" },
+    { name: "Home", href: "/" },
+    { name: "Team", href: "/team" },
+    { name: "Whitepaper", href: "/whitepaper" },
     { name: "Start", href: "#start", isButton: true },
   ];
 
@@ -79,21 +80,22 @@ const Navbar = () => {
         <div className="hidden md:flex gap-6 items-center">
           {menuItems.map((item) =>
             item.isButton ? (
-              <a
-                key={item.name}
-                href={item.href}
+              <NavLink 
+                key={item.name} 
+                to={item.href} 
                 className={`px-4 py-2 rounded transition button-${theme} ${themeStyles[theme].navbarText} hover:opacity-90`}
-              >
+                //activeStyle={styles.activeLink}
+                >
                 {item.name}
-              </a>
+              </NavLink>
             ) : (
-              <a
+              <NavLink
                 key={item.name}
-                href={item.href}
+                to={item.href}
                 className={`font-semibold ${themeStyles[theme].navbarText} ${themeStyles[theme].hover}`}
               >
                 {item.name}
-              </a>
+              </NavLink>
             )
           )}
         </div>
@@ -136,13 +138,13 @@ const Navbar = () => {
               // </li>
             ) : (
               <li key={item.name}>
-                <a
-                  href={item.href}
+                <NavLink
+                  to={item.href}
                   onClick={handleMenuClick} // Close the menu on click
                   className={`text-lg font-semibold ${themeStyles[theme].navbarText} transition ${themeStyles[theme].hover}`}
                 >
                   {item.name}
-                </a>
+                </NavLink>
               </li>
             )
           )}
