@@ -20,7 +20,7 @@ export default function TeamScreen() {
     },
     {
       name: 'Mateo Areiza',
-      role: 'Chief Technology Officer',
+      role: 'Co-Founder',
       image: '/images/profile2.png',
       bio: 'Mateo leads the technical team, ensuring our app remains cutting-edge and reliable.',
     },

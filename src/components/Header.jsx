@@ -25,6 +25,15 @@ const BackgroundCircle2 = () => {
 const Header = () => {
   const { theme } = useTheme();
 
+  const handleClick = () => {
+    if (window.gtag) {
+      window.gtag('event', 'button_click', {
+        event_category: 'User Interaction',
+        event_label: 'Clicked Dynamic Page Button',
+      });
+    }
+  };
+
   return (
     <header id="home" className="h-screen flex flex-col relative">
     {/* Background */}
@@ -44,7 +53,7 @@ const Header = () => {
           Take control of your days with <strong>Growvyn</strong>. Start
           building better habits today.
         </p>
-        <button className={`button-base button-${theme} mt-6`}>
+        <button onClick={handleClick} className={`button-base button-${theme} mt-6`}>
           Get Started!
         </button>
       </div>
