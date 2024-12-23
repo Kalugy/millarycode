@@ -14,7 +14,7 @@ export default function TeamScreen() {
   const teamMembers = [
     {
       name: 'Julian Trujillo',
-      role: 'Founder & CEO',
+      role: 'Founder',
       image: '/images/profile1.png',
       bio: 'Julian is the visionary behind our app, bringing years of experience in personal development and technology.',
     },
