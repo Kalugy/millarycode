@@ -1,6 +1,8 @@
 # TODOS
 ## Review 
 - [] Analitic set up - remove from header for secure porpuse
+- [] growvyn access directly to /team is nor working (on local is working)
+
 
 
 
