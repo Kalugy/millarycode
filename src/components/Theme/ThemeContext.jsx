@@ -5,7 +5,7 @@ const ThemeContext = createContext();
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState(() => {
     // Load initial theme from localStorage or fallback to 'default'
-    return localStorage.getItem("theme") || "default";
+    return localStorage.getItem("theme") || "green";
   });
 
   const switchTheme = (themeName) => {

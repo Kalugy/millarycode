@@ -7,14 +7,17 @@ import DiscordIcon from '../assets/icons/DiscordIcon';
 import SocialIcon from '../assets/icons/SocialIcon';
 import { ThemeSelectorButtons } from './Theme/ThemeSelector'
 
+import { NavLink } from "react-router-dom";
+import useScrollToTop from "../hooks/useScrollToTop";
+
 const Footer = () => {
   const { theme, switchTheme } = useTheme();
+  const scrollToTop = useScrollToTop();
 
   const quickLinks = [
-    { label: "Home", href: "#home" },
-    { label: "About", href: "#about" },
-    { label: "Feature", href: "#features" },
-    { label: "FAQ", href: "#faq" },
+    { label: "Home", href: "/" },
+    { label: "Team", href: "/team" },
+    { label: "WhitePaper", href: "/whitepaper" },
   ];
 
   const socialMediaLinks = [
@@ -29,6 +32,13 @@ const Footer = () => {
     { href: "https://www.youtube.com/@Growvyn", icon: <YouTubeIcon />, label: "Youtube" },
     { href: "https://discord.gg/X8vddq9P", icon: <DiscordIcon />, label: "Discord" },
   ];
+
+  const handleScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // Smooth scrolling effect
+    });
+  };
 
   return (
     <footer className="py-6">
@@ -46,16 +56,17 @@ const Footer = () => {
         {/* Right Side: Quick Navigation */}
         <div className="flex flex-col md:flex-row gap-5 justify-center">
         <div className="mb-4 md:mb-0">
-          <h4 className="text-xl font-bold mb-2">Quick Navigation</h4>
+          <h4 className="text-xl font-bold mb-2">Navigation</h4>
           <ul className="space-y-2 text-sm">
             {quickLinks.map((link) => (
               <li key={link.href}>
-                <a
-                  href={link.href}
+                <NavLink 
+                  to={link.href} 
                   className="hover:text-blue-400 transition duration-300"
-                >
+                  onClick={scrollToTop}
+                  >
                   {link.label}
-                </a>
+                </NavLink>
               </li>
             ))}
           </ul>
