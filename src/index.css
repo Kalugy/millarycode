@@ -3,9 +3,23 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom styles for better layout and spacing */
+@font-face {
+  font-family: 'Exo 2';
+  src: url('./assets/fonts/Exo2-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Exo 2';
+  src: url('./assets/fonts/Exo2-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+}
+
+/* Custom global styles */
 body {
-  @apply bg-gray-700 font-sans;
+  @apply bg-gray-700 font-exo;
 }
 
 h1 {

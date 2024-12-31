@@ -14,6 +14,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        exo: ['"Exo 2"', 'sans-serif'], // Add your custom font
+      },
       colors: {
         // Add bg colors for each theme
         defaultBg: '#ffffff',

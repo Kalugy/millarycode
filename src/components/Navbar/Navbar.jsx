@@ -70,15 +70,14 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between px-4 py-3">
         {/* Logo */}
-        <div>
+        <NavLink className="cursor-pointer" to="/" onClick={scrollToTop}>
           <div className="flex ml-5 align-middle items-center">
             <img src="/images/newLogo.png" alt="Logo" className="h-12 rotate-[10deg]" />
-            <h1 className={`text-2xl font-bold ml-2 ${themeStyles[theme].navbarText}`}>
+            <h1 className={`text-2xl italic font-bold ml-2 ${themeStyles[theme].navbarText}`}>
               Growvyn
             </h1>
           </div>
-        </div>
-
+        </NavLink>
         {/* Desktop Menu */}
         <div className="hidden md:flex gap-6 items-center">
           {menuItems.map((item) =>

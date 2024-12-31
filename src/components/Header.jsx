@@ -3,7 +3,7 @@ import { useTheme } from "./Theme/ThemeContext";
 const BackgroundCircle = () => {
   return (
     <div
-      className="absolute top-10 md:top-0 right-0 w-48 h-48 md:w-80 md:h-80 bg-cover bg-center rounded-full"
+      className="absolute top-20 md:top-0 right-0 w-20 h-20 md:w-60 md:h-60 bg-cover bg-center rounded-full"
       style={{
         backgroundImage: "url('/images/newBg.png')", // Replace with your image path
       }}
@@ -43,11 +43,11 @@ const Header = () => {
     {/* Main Content */}
     <div className="flex-grow flex items-center justify-center text-center">
       <div>
-        <h1 className="text-5xl md:text-6xl font-extrabold mb-4 collapse">
-          Growvyn
+        <h1 className="text-base md:text-6xl font-extrabold mb-4 collapse">
+          GROWVYN
         </h1>
-        <h2 className="text-5xl md:text-6xl font-extrabold">
-          Track Time. Grow Wisely.
+        <h2 className="text-3xl md:text-5xl font-extrabold">
+          Track Time. Grow Wisely
         </h2>
         <p className="text-lg md:text-xl mb-8">
           Take control of your days with <strong>Growvyn</strong>. Start

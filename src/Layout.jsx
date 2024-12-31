@@ -9,7 +9,7 @@ export default function Layout() {
   const { theme } = useTheme() 
 
   return (
-    <div className={`theme-${theme}`}>
+    <div className={`theme-${theme} text-base md:text-lg`}>
       {/* Navbar at the top */}
       <Navbar />
 
