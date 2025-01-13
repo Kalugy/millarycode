@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTheme } from '../components/Theme/ThemeContext';
+import Section from '../components/Section';
 
 export default function TeamScreen() {
   const { theme } = useTheme()
@@ -29,6 +30,7 @@ export default function TeamScreen() {
   return (
     <div className={`min-h-screen mt-20`}>
       {/* Header Section */}
+      <Section>
       <header className={`${bgClasses[theme]} py-6 animate-fadeIn`}>
         <div className="container mx-auto px-4">
           <h1 className="text-4xl font-bold">Meet Our Team</h1>
@@ -37,8 +39,9 @@ export default function TeamScreen() {
           </p>
         </div>
       </header>
-
+      </Section>
       {/* Team Members Section */}
+      <Section>
       <main className="container mx-auto px-4 py-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {teamMembers.map((member, index) => (
@@ -60,6 +63,7 @@ export default function TeamScreen() {
           ))}
         </div>
       </main>
+      </Section>
 
     </div>
   );

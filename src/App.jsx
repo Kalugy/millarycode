@@ -3,8 +3,8 @@ import Layout from './Layout';
 import HomeScreen from './pages/HomeScreen';
 import TeamScreen from './pages/TeamScreen';
 import WhitepaperScreen from './pages/WhitepaperScreen'
-
 import useAnalytics from './hooks/useAnalytics';
+
 
 function App() {
   useAnalytics(); 

@@ -2,7 +2,7 @@
 import React from 'react';
 import { useTheme } from '../components/Theme/ThemeContext';
 import LogoStory from '../components/Whitepaper/LogoStory';
-
+import Section from '../components/Section';
 export default function WhitepaperScreen() {
   const { theme } = useTheme()
 
@@ -16,6 +16,7 @@ export default function WhitepaperScreen() {
   return (
     <div className={`min-h-screen mt-20`}>
       {/* Header Section */}
+      <Section>
       <header className={`${bgClasses[theme]} py-2`}>
         <div className="container mx-auto px-4">
           <h1 className="text-4xl font-bold">Growvyn Whitepaper</h1>
@@ -24,10 +25,12 @@ export default function WhitepaperScreen() {
           </p>
         </div>
       </header>
-
+      </Section>
       {/* Main Content */}
+      
       <main className="container mx-auto px-4 py-10">
         {/* Introduction */}
+        <Section>
         <section className="mb-8">
           <h2 className="text-3xl font-semibold mb-4">Introduction</h2>
           <p className="text-lg leading-relaxed">
@@ -37,7 +40,8 @@ export default function WhitepaperScreen() {
             the science behind personal growth.
           </p>
         </section>
-
+        </Section>
+        <Section>
         {/* Key Features */}
         <section className="mb-8">
           <h2 className="text-3xl font-semibold mb-4">Key Features</h2>
@@ -60,8 +64,9 @@ export default function WhitepaperScreen() {
             </li>
           </ul>
         </section>
-
+        </Section>
         {/* Vision and Philosophy */}
+        <Section>
         <section className="mb-8">
           <h2 className="text-3xl font-semibold mb-4">Our Vision</h2>
           <p className="text-lg leading-relaxed">
@@ -70,8 +75,9 @@ export default function WhitepaperScreen() {
             to help users take consistent, meaningful steps toward self-improvement.
           </p>
         </section>
-
+        </Section>
         {/* Call to Action */}
+        <Section>
         <section>
           <h2 className="text-3xl font-semibold mb-4">Join Us</h2>
           <p className="text-lg leading-relaxed mb-6">
@@ -87,9 +93,11 @@ export default function WhitepaperScreen() {
             Get Started Now
           </a>
         </section>
+        </Section>
       </main>
+      <Section>
       <LogoStory/>
-
+      </Section>
     </div>
   );
 }

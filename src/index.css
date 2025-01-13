@@ -243,3 +243,103 @@ button.secondary {
 }
 
 
+@keyframes left {
+  to {
+    transform: rotateY(-60deg);
+  }
+}
+
+@keyframes right {
+  to {
+    transform: rotateY(-60deg);
+  }
+}
+
+.canvas {
+  width: 734px;
+  height: 741px;
+  position: absolute;
+  left: 40%;
+  top: 78%;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 768px) { /* Adjust max-width as needed for your target devices */
+  .canvas {
+    width: 134px;
+    height: 141px;
+    left: 40%;
+    top: 25%;
+  }
+}
+
+.bf {
+  width: 34px;
+  height: auto;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.bf .wing-left,
+.bf .wing-right {
+  width: 50%;
+}
+
+.bf .wing-left svg,
+.bf .wing-right svg {
+  width: 100%;
+  height: auto;
+}
+
+.wing-left {
+  animation: left .7s linear infinite alternate;
+  transform-origin: right;
+}
+
+.wing-right {
+  animation: right .7s linear infinite alternate;
+  transform-origin: left;
+}
+
+.wing-right svg {
+  transform: scaleX(-1);
+}
+
+/* Individual Butterfly Positions */
+.bf-1 {
+  top: 25%;
+  transform: rotate(-8deg);
+}
+
+.bf-2 {
+  width: 10px;
+  left: auto;
+  right: 5%;
+  transform: rotate(20deg);
+}
+
+
+.bf-3 {
+  top: 30%;
+  left: 120%;
+  width: 16px;
+  transform: rotate(-30deg);
+}
+
+
+.bf-4 {
+  top: 50%;
+  width: 20px;
+  left: auto;
+  right: 0;
+  transform: rotate(1deg);
+}
+
+.bf-5 {
+  bottom: 0;
+  width: 28px;
+  left: 40%;
+  transform: rotate(45deg);
+}

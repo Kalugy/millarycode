@@ -3,7 +3,7 @@ import Hero from '../components/Hero';
 import Features from '../components/Features';
 import CalendarPage from '../components/Calendar/CalendarPage';
 import FAQs from "../components/FAQ/FAQ";
-
+import Section from '../components/Section';
 
 function HomeScreen() {
  
@@ -12,11 +12,21 @@ function HomeScreen() {
         {/* <ThemeSelector/> */}
         {/* <ButterflyScene/> */}
         {/* <Navbar /> */}
-        <Header/>
-        <CalendarPage />
-        <Features />
-        <Hero />
+        <Section>
+          <Header/>
+        </Section>
+        <Section>
+          <CalendarPage />
+        </Section>
+        <Section>
+          <Features />
+        </Section>
+        <Section>
+          <Hero />
+        </Section>
+        <Section>
         <FAQs />
+        </Section>
         {/* <Review /> */}
         {/* <Footer /> */}
       </div>

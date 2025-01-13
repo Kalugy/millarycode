@@ -1,4 +1,5 @@
 import { useTheme } from "./Theme/ThemeContext";
+import Butterfly from "./Butterfly";
 
 const BackgroundCircle = () => {
   return (
@@ -14,7 +15,7 @@ const BackgroundCircle = () => {
 const BackgroundCircle2 = () => {
   return (
     <div
-      className="absolute invisible md:visible top-0 md:left-0 w-32 h-32 md:w-15 md:h-60 -translate-y-9 bg-cover bg-center rounded-full"
+      className="absolute invisible md:visible -top-5 md:left-0 w-32 h-32 md:w-15 md:h-60 -translate-y-9 bg-cover bg-center rounded-full"
       style={{
         backgroundImage: "url('/images/pupa.png')", // Replace with your image path
       }}
@@ -39,7 +40,7 @@ const Header = () => {
     {/* Background */}
     <BackgroundCircle />
     <BackgroundCircle2 />
-
+    <Butterfly />
     {/* Main Content */}
     <div className="flex-grow flex items-center justify-center text-center">
       <div>
