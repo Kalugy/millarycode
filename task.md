@@ -1,7 +1,7 @@
 # TODOS
 ## Review 
-- [] fade in fade out for all section so is more interactivable
-- [] create a main bg i think like simple main bg more like impactfull still no much 
+- [X] fade in fade out for all section so is more interactivable
+- [X] create a main bg i think like simple main bg more like impactfull still no much 
 
 
 
@@ -26,3 +26,6 @@ https://sketchfab.com/3d-models/12-animated-butterflies-8ca3b9aa82694e6b8bc53a69
 
 For now keep it simple and do 2d so an image and bg thats all
 
+
+interesting adding this animation in some section
+https://codepen.io/Utkarsh-Patidar/pen/eYQmRoo

@@ -18,9 +18,8 @@ function HomeScreen() {
         <Section>
           <CalendarPage />
         </Section>
-        <Section>
+        
           <Features />
-        </Section>
         <Section>
           <Hero />
         </Section>
