@@ -70,19 +70,19 @@ const timelines = {
       description: "Extensive testing is conducted, including usability testing, performance testing, and security assessments to ensure system reliability for the Calendar and Habit Tracker features." 
     },
     { 
-      date: "04/12/2025", 
+      date: "03/22/2025", 
       title: "Stage 5", 
       subtitle: "Deployment", 
-      stage: "DEPLOY", 
-      feature: " Habit Tracker", 
-      description: "The Calendar and Habit Tracker modules are deployed to production. Final optimizations are made, and post-launch monitoring ensures system stability." 
+      stage: "DEV", 
+      feature: "Finance", 
+      description: "The finance modules are deployed to production. Final optimizations are made, and post-launch monitoring ensures system stability." 
     },
     { 
       date: "04/12/2025", 
       title: "Stage 5", 
       subtitle: "Deployment", 
       stage: "DEPLOY", 
-      feature: "Habit Tracker", 
+      feature: "Finance", 
       description: "The Calendar and Habit Tracker modules are deployed to production. Final optimizations are made, and post-launch monitoring ensures system stability." 
     },
   ],
