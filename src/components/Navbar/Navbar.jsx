@@ -65,10 +65,10 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition duration-300 ${
-        isScrolled ? themeStyles[theme].navbarBg : "bg-transparent"
+        isScrolled ? `${themeStyles[theme].navbarBg} bg-opacity-70` : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto flex items-center justify-between px-4 py-3">
+      <div className="flex items-center justify-between px-4 py-1 lg:px-60">
         {/* Logo */}
         <NavLink className="cursor-pointer" to="/" onClick={scrollToTop}>
           <div className="flex ml-5 align-middle items-center">

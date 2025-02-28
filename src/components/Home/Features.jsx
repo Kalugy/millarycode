@@ -1,4 +1,4 @@
-import { useTheme } from "./Theme/ThemeContext";
+import { useTheme } from "../Theme/ThemeContext";
 
 const Features = () => {
   

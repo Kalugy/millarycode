@@ -1,9 +1,11 @@
-import Header from '../components/Header';
-import Hero from '../components/Hero';
-import Features from '../components/Features';
+import Header from '../components/Home/Header';
+import Hero from '../components/Home/Hero';
+import Features from '../components/Home/Features';
 import CalendarPage from '../components/Calendar/CalendarPage';
 import FAQs from "../components/FAQ/FAQ";
 import Section from '../components/Section';
+import About from '../components/Home/About';
+import TimelineCarousel from '../components/Home/TimelineCarousel';
 
 function HomeScreen() {
  
@@ -15,22 +17,32 @@ function HomeScreen() {
         <Section>
           <Header/>
         </Section>
+        {/* <Section> */}
+          <About />
+
+        {/* </Section> */}
         <Section>
           <CalendarPage />
         </Section>
         
-          <Features />
+        <Features />
+        <TimelineCarousel />
+
         <Section>
           <Hero />
         </Section>
         <Section>
         <FAQs />
         </Section>
+        
+
         {/* <Review /> */}
         {/* <Footer /> */}
       </div>
   )
 }
+
+
 
 export default HomeScreen
 
