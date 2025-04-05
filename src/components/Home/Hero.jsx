@@ -1,6 +1,19 @@
 import { useTheme } from "../Theme/ThemeContext";
 const Hero = () => {
   const { theme } = useTheme()
+  const handleClick = () => {
+    if (window.gtag) {
+      window.gtag('event', 'button_click', {
+        event_category: 'User CLICK',
+        event_label: 'Clicked TO SEE Growvyn page',
+      });
+
+    }
+    
+    // Open Growvyn app in a new tab
+    window.open('https://app.growvyn.com/', '_blank');
+  };
+
 
   return (
   <section className="py-20">
@@ -9,7 +22,7 @@ const Hero = () => {
       <p className="text-lg mb-8">
         <span className="font-bold italic">Growvyn</span> helps you track your time effectively to achieve your goals and unlock your potential.
       </p>
-      <button className={`button-base button-${theme} mt-6`}>
+      <button onClick={handleClick} className={`button-base button-${theme} mt-6`}>
         Get Started!
       </button>
     </div>
