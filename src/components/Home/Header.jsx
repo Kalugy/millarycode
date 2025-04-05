@@ -32,7 +32,11 @@ const Header = () => {
         event_category: 'User Interaction',
         event_label: 'Clicked Dynamic Page Button',
       });
+
     }
+    
+    // Open Growvyn app in a new tab
+    window.open('https://app.growvyn.com/', '_blank');
   };
 
   return (

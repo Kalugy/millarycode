@@ -13,7 +13,7 @@ const Navbar = () => {
     { name: "Home", href: "/" },
     { name: "Team", href: "/team" },
     { name: "Whitepaper", href: "/whitepaper" },
-    { name: "Start", href: "#start", isButton: true },
+    { name: "Start", href: "https://app.growvyn.com/", isButton: true },
   ];
 
   const themeStyles = {
