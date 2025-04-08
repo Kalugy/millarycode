@@ -4,27 +4,54 @@ import InstagramIcon from '../assets/icons/InstagramIcon';
 import YouTubeIcon from '../assets/icons/YouTubeIcon';
 import SocialIcon from '../assets/icons/SocialIcon';
 
+import { FaEnvelope, FaPhoneAlt, FaWhatsapp, FaMapMarkerAlt } from "react-icons/fa";
+
+
+const contactInfo = [
+  {
+    icon: <FaEnvelope className="text-[#05CCB4] text-2xl" />, // Turquesa
+    title: "Email",
+    value: "contacto@millary.cl",
+  },
+  {
+    icon: <FaPhoneAlt className="text-[#0955E7] text-2xl" />, // Azul
+    title: "Teléfono",
+    value: "+569 99 92 66 98",
+  },
+  {
+    icon: <FaWhatsapp className="text-[#05CCB4] text-2xl" />, // Turquesa
+    title: "WhatsApp",
+    value: "+569 99 92 66 98",
+  },
+  {
+    icon: <FaMapMarkerAlt className="text-[#E52C35] text-2xl" />, // Rojo
+    title: "Ubicación",
+    value: "Santiago, Chile"
+  },
+];
+
+
 const Footer = () => {
   const quickLinks = [
     { label: "Inicio", href: "/" },
     { label: "Nosotros", href: "#about" },
     { label: "Servicios", href: "#services" },
-    { label: "Contact", href: "#contact" }
+    { label: "Contacto", href: "#contact" }
   ];
 
   const socialMediaLinks = [
     {
-      href: "https://www.facebook.com/",
+      href: "https://web.facebook.com/juan.quineman",
       icon: () => <SocialIcon color="#1877F2" path="M18 2H15a5 5 0 00-5 5v3H7v4h3v8h4v-8h3.72l.78-4H14V7a1 1 0 011-1h3z" />, 
       label: "Facebook"
     },
-    {
-      href: "https://x.com/",
-      icon: () => <SocialIcon color="#1877F2" path="M23 3a10.9 10.9 0 01-3.14 1.53A4.48 4.48 0 0016 3a4.48 4.48 0 00-4.48 4.48c0 .35.04.7.11 1.03A12.94 12.94 0 013 4s-4 9 5 13a13.34 13.34 0 01-7 2c9 5 20-1 20-11.5a4.48 4.48 0 00-.08-.83A10.18 10.18 0 0023 3z" />,
-      label: "Twitter"
-    },
-    { href: "https://instagram.com", icon: InstagramIcon, label: "Instagram" },
-    { href: "https://www.youtube.com/", icon: YouTubeIcon, label: "Youtube" },
+    // {
+    //   href: "https://x.com/",
+    //   icon: () => <SocialIcon color="#1877F2" path="M23 3a10.9 10.9 0 01-3.14 1.53A4.48 4.48 0 0016 3a4.48 4.48 0 00-4.48 4.48c0 .35.04.7.11 1.03A12.94 12.94 0 013 4s-4 9 5 13a13.34 13.34 0 01-7 2c9 5 20-1 20-11.5a4.48 4.48 0 00-.08-.83A10.18 10.18 0 0023 3z" />,
+    //   label: "Twitter"
+    // },
+    { href: "https://www.instagram.com/millary.cocina/", icon: InstagramIcon, label: "Instagram" },
+    // { href: "https://www.youtube.com/", icon: YouTubeIcon, label: "Youtube" },
   ];
 
 
@@ -97,6 +124,44 @@ const Footer = () => {
             <li><a href="https://wa.link/q8rlm1" target="_blank" className="hover:text-[#E98B07] transition">Almuerzos y Cenas Ejecutivas</a></li>
           </ul>
         </div>
+
+        <div>
+          <h4 className="text-lg font-semibold mb-3 text-[#E98B07]">Contacto</h4>
+          <ul className="space-y-4">
+            {contactInfo.map((item, index) => (
+              <li key={index} className="flex items-start gap-3">
+                {/*<span>{item.icon}</span>*/}
+                <div>
+                  <p className="text-sm font-medium">{item.title}:</p>
+                  {item.title === "Email" ? (
+                    <a href={`mailto:${item.value}`} className="text-sm hover:text-[#E98B07] transition">
+                      {item.value}
+                    </a>
+                  ) : item.title === "WhatsApp" ? (
+                    <a
+                      href="https://wa.link/q8rlm1"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm hover:text-[#E98B07] transition"
+                    >
+                      {item.value}
+                    </a>
+                  ) : item.title === "Teléfono" ? (
+                    <a
+                      href={`tel:${item.value.replace(/\s/g, "")}`}
+                      className="text-sm hover:text-[#E98B07] transition"
+                    >
+                      {item.value}
+                    </a>
+                  ) : (
+                    <p className="text-sm">{item.value}</p>
+                  )}
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+
 
       </div>
 

@@ -11,14 +11,26 @@ const Navbar = () => {
     { name: "Inicio", href: "/" },
     { name: "Nosotros", href: "#about" },
     { name: "Servicios", href: "#services" },
-    { name: "Contact", href: "#contact" },
+    { name: "Contacto", href: "#contact" },
     { name: "Reservas", href: "https://wa.link/q8rlm1", isButton: true },
   ];
 
-  const handleMenuClick = () => {
-    scrollToTop();
+   const handleMenuClick = (href) => {
     setMobileMenuOpen(false);
+
+    setTimeout(() => {
+      if (href.startsWith("#")) {
+        const targetId = href.substring(1);
+        const element = document.getElementById(targetId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      } else {
+        scrollToTop();
+      }
+    }, 300);
   };
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -109,29 +121,85 @@ const Navbar = () => {
 
       {isMobileMenuOpen && (
         <div
-          className={`fixed top-0 left-0 w-full h-full bg-white transform transition-transform duration-500 ease-in-out z-40 overflow-hidden`}
+          className={`fixed top-0 left-0 w-full min-h-screen bg-white transform transition-transform duration-500 ease-in-out z-40 overflow-y-auto flex flex-col items-center pt-12 px-4`}
         >
+          {/* Cerrar botón */}
           <button
             onClick={() => setMobileMenuOpen(false)}
             className="absolute top-4 right-6 text-3xl text-gray-800"
           >
             ✕
           </button>
-          <ul className="flex flex-col items-center justify-center gap-8 h-full">
-            {menuItems.map((item) => (
-              <li key={item.name}>
-                <NavLink
-                  to={item.href}
-                  onClick={handleMenuClick}
-                  className={`text-lg font-semibold ${item.isButton ? "px-6 py-2 rounded bg-black text-white hover:bg-gray-800" : "text-gray-800 hover:text-black"} transition`}
-                >
-                  {item.name}
-                </NavLink>
-              </li>
-            ))}
+
+          {/* Logo */}
+          <NavLink
+            to="/"
+            onClick={() => {
+              scrollToTop();
+              setMobileMenuOpen(false);
+            }}
+            className="mb-8"
+          >
+            <div className="flex items-center gap-2">
+              <img src="/images/onlyLogo.webp" alt="Millary Logo" className="h-10" />
+              <h1 className="text-xl font-bold text-gray-800">Millary</h1>
+            </div>
+          </NavLink>
+
+          {/* Menú móvil */}
+          <ul className="flex flex-col items-center justify-center gap-8 w-full">
+            {menuItems.map((item) => {
+              const isExternal = item.href.startsWith("http");
+
+              return (
+                <li key={item.name} className="flex items-center gap-2">
+                  {isExternal ? (
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`text-lg font-semibold flex items-center gap-2 ${
+                        item.isButton
+                          ? "px-6 py-2 rounded bg-black text-white hover:bg-gray-800"
+                          : "text-gray-800 hover:text-black"
+                      } transition`}
+                    >
+                      {item.name}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-4 w-4"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M13 7h6m0 0v6m0-6L10 17"
+                        />
+                      </svg>
+                    </a>
+                  ) : (
+                    <NavLink
+                      to={item.href}
+                      onClick={() => handleMenuClick(item.href)}
+                      className={`text-lg font-semibold ${
+                        item.isButton
+                          ? "px-6 py-2 rounded bg-black text-white hover:bg-gray-800"
+                          : "text-gray-800 hover:text-black"
+                      } transition`}
+                    >
+                      {item.name}
+                    </NavLink>
+                  )}
+                </li>
+              );
+            })}
           </ul>
         </div>
       )}
+
     </nav>
   );
 };

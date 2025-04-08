@@ -8,7 +8,7 @@ const useAnalytics = () => {
     if (window.gtag) {
       // Example: Include query parameters if necessary
       const pagePath = `${location.pathname}${location.search}`;
-      window.gtag('config', 'G-FPP4GNNH9Q', {
+      window.gtag('config', '', {
         page_path: pagePath, // Includes full path with query parameters
       });
     }

@@ -4,22 +4,22 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'Exo 2';
+  font-family: 'Montserrat';
   src: url('./assets/fonts/Montserrat-Italic-VariableFont_wght.ttf') format('truetype');
-  font-weight: 100 900;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Exo 2';
-  src: url('./assets/fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
   font-weight: 100 900;
   font-style: italic;
 }
 
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./assets/fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+}
+
 /* Custom global styles */
 body {
-  @apply bg-gray-700 font-exo;
+  @apply bg-gray-700 font-montserrat;;
 }
 
 h1 {
@@ -78,15 +78,15 @@ button.secondary {
 
 .swiper-button-prev,
 .swiper-button-next {
-  color: #E98B07 !important; /* red */
+  color: #E52C35 !important; /* red */
 }
 
 .swiper-pagination-bullet {
-  background: #E98B07 !important; /* orange */
+  background: #E52C35 !important; /* orange */
   opacity: 0.5;
 }
 
 .swiper-pagination-bullet-active {
-  background: #E98B07 !important; /* red */
+  background: #E52C35 !important; /* red */
   opacity: 1;
 }

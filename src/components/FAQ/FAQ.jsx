@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useTheme } from "../Theme/ThemeContext";
 const questions = [
     {
         question: "How does Growvyn track my daily activities?",
@@ -33,7 +32,6 @@ const FAQs = () => {
   // State to manage which question is currently open
   const [openIndex, setOpenIndex] = useState(null);
 
-  const { theme } = useTheme()
 
   const bgClassesOuter = {
     default: 'bg-defaultBg text-defaultText border-defaultHoverBg hover:bg-defaultHoverBg',

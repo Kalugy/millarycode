@@ -1,34 +1,55 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
+import { FaInstagram, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 const teamMembers = [
   {
-    name: "Laura Gómez",
-    role: "Chef Pastelera",
-    image: "https://foodservice.aoachile.com/wp-content/uploads/2025/01/pro-removebg-preview.png",
-    bio: "Amante de los sabores dulces de la Araucanía. Innovación con ingredientes nativos como maqui y murtilla.",
+    name: "Juan Quiñeman",
+    role: "Cocinero Mapuche",
+    image: "/images/chef.webp",
+    bio: "Amante de los sabores dulces de la Araucanía. Innovación con ingredientes nativos, sabores ancestrales y los productos regionales.",
+    social: {
+      instagram: "https://www.instagram.com/chef.juanquineman/",
+      facebook: "https://web.facebook.com/juan.quineman",
+      linkedin: "https://www.linkedin.com/in/juan-carlos-qui%C3%B1eman-67135026/",
+    },
   },
   {
     name: "Carlos Méndez",
     role: "Sous Chef",
     image: "https://foodservice.aoachile.com/wp-content/uploads/2025/01/pro-removebg-preview.png",
     bio: "Enfocado en técnicas tradicionales y recolección de productos estacionales como piñones y hierbas frescas.",
+    social: {
+      instagram: "https://instagram.com",
+      facebook: "https://facebook.com",
+      linkedin: "https://linkedin.com",
+    },
   },
   {
     name: "Valentina Ruiz",
     role: "Chef de Cocina Vegana",
     image: "https://foodservice.aoachile.com/wp-content/uploads/2025/01/pro-removebg-preview.png",
     bio: "Creadora de platos basados en quinoa, papas nativas y sabores auténticos de la región.",
+    social: {
+      instagram: "https://instagram.com",
+      facebook: "https://facebook.com",
+      linkedin: "https://linkedin.com",
+    },
   },
   {
     name: "Andrés Soto",
     role: "Experto en Maridaje",
     image: "https://foodservice.aoachile.com/wp-content/uploads/2025/01/pro-removebg-preview.png",
     bio: "Fusiona sabores con bebidas artesanales para lograr una experiencia sensorial inolvidable.",
+    social: {
+      instagram: "https://instagram.com",
+      facebook: "https://facebook.com",
+      linkedin: "https://linkedin.com",
+    },
   },
 ];
 
@@ -66,7 +87,7 @@ const TeamSection = () => {
       >
         {teamMembers.map((member) => (
           <SwiperSlide key={member.name}>
-            <div className="rounded-3xl shadow-xl border border-[#E98B07]/20 p-8 m-8 lg:m-15 text-center h-full hover:shadow-2xl transition duration-300 flex flex-col items-center">
+            <div className="rounded-3xl shadow-xl border border-[#E98B07]/20 p-8 m-8 text-center h-full hover:shadow-2xl transition duration-300 flex flex-col items-center">
               <div className="w-32 h-32 mb-4 rounded-full border-4 border-[#E98B07] bg-white shadow-md overflow-hidden">
                 <img
                   src={member.image}
@@ -78,10 +99,21 @@ const TeamSection = () => {
                 {member.name}
               </h3>
               <p className="text-[#E52C35] font-medium mb-2">{member.role}</p>
-              <p className="text-gray-700 text-sm leading-relaxed">{member.bio}</p>
+              <p className="text-gray-700 text-sm leading-relaxed mb-4">{member.bio}</p>
+
+              <div className="flex gap-4 justify-center mt-auto">
+                <a href={member.social.instagram} target="_blank" rel="noopener noreferrer" className="text-[#E52C35] hover:text-[#E52C35] text-xl transition">
+                  <FaInstagram />
+                </a>
+                <a href={member.social.facebook} target="_blank" rel="noopener noreferrer" className="text-[#E52C35] hover:text-[#E52C35] text-xl transition">
+                  <FaFacebookF />
+                </a>
+                <a href={member.social.linkedin} target="_blank" rel="noopener noreferrer" className="text-[#E52C35] hover:text-[#E52C35] text-xl transition">
+                  <FaLinkedinIn />
+                </a>
+              </div>
             </div>
           </SwiperSlide>
-
         ))}
       </Swiper>
     </section>
