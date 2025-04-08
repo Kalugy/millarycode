@@ -9,12 +9,12 @@ export default function Layout() {
   const { theme } = useTheme() 
 
   return (
-    <div className={`theme-${theme} text-base md:text-lg`}>
+    <div className={` text-base md:text-lg`}>
       {/* Navbar at the top */}
       <Navbar />
 
       {/* Main content area */}
-      <div style={{ minHeight: '80vh', padding: '20px' }}>
+      <div style={{ minHeight: '80vh'}}>
         <Outlet /> {/* Dynamic content goes here */}
       </div>
 

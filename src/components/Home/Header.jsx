@@ -1,69 +1,30 @@
-import { useTheme } from "../Theme/ThemeContext";
-import Butterfly from "./Butterfly";
+import React from "react";
+import { Link } from "react-router-dom";
 
-const BackgroundCircle = () => {
+const HomeHero = () => {
   return (
-    <div
-      className="absolute top-20 md:top-0 right-0 w-20 h-20 md:w-60 md:h-60 bg-cover bg-center rounded-full"
-      style={{
-        backgroundImage: "url('/images/newBg.png')", // Replace with your image path
-      }}
-    ></div>
-  );
-};
-
-const BackgroundCircle2 = () => {
-  return (
-    <div
-      className="absolute invisible md:visible -top-5 md:left-0 w-32 h-32 md:w-15 md:h-60 -translate-y-9 bg-cover bg-center rounded-full"
-      style={{
-        backgroundImage: "url('/images/pupa.png')", // Replace with your image path
-      }}
-    ></div>
-  );
-};
-
-const Header = () => {
-  const { theme } = useTheme();
-
-  const handleClick = () => {
-    if (window.gtag) {
-      window.gtag('event', 'button_click', {
-        event_category: 'User Interaction',
-        event_label: 'Clicked Dynamic Page Button',
-      });
-
-    }
-    
-    // Open Growvyn app in a new tab
-    window.open('https://app.growvyn.com/', '_blank');
-  };
-
-  return (
-    <header id="home" className="h-screen flex flex-col relative">
-    {/* Background */}
-    <BackgroundCircle />
-    <BackgroundCircle2 />
-    <Butterfly />
-    {/* Main Content */}
-    <div className="flex-grow flex items-center justify-center text-center">
-      <div>
-        <h1 className="text-base md:text-6xl font-extrabold mb-4 collapse">
-          GROWVYN
+    <section
+      className="relative h-[100vh] bg-cover bg-center flex items-center justify-center text-white"
+      style={{ backgroundImage: "url('/images/Millary62.webp')" }}
+    >
+      <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+      <div className="relative z-10 text-center max-w-2xl px-4">
+        <h1 className="text-4xl md:text-6xl font-bold mb-6 text-[#E98B07]">
+          Experiencias Gastronómicas con Identidad
         </h1>
-        <h2 className="text-3xl md:text-5xl font-extrabold">
-          Track Time. Grow Wisely
-        </h2>
-        <p className="text-lg md:text-xl mb-8">
-          Take control of your days with <strong>Growvyn</strong>. Start
-          building better habits today.
+        <p className="text-lg md:text-xl mb-8 text-white">
+          En Millary creamos momentos inolvidables con sabores auténticos del territorio.
         </p>
-        <button onClick={handleClick} className={`button-base button-${theme} mt-6`}>
-          Get Started!
-        </button>
+        <Link
+          to="https://wa.link/q8rlm1"
+          target="_blank"
+          className="bg-[#E52C35] hover:bg-[#c5252d] text-white px-6 py-3 rounded font-medium transition duration-300"
+        >
+          Reserva ahora
+        </Link>
       </div>
-    </div>
-  </header>
-)};
+    </section>
+  );
+};
 
-export default Header;
+export default HomeHero;

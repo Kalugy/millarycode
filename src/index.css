@@ -5,14 +5,14 @@
 
 @font-face {
   font-family: 'Exo 2';
-  src: url('./assets/fonts/Exo2-VariableFont_wght.ttf') format('truetype');
+  src: url('./assets/fonts/Montserrat-Italic-VariableFont_wght.ttf') format('truetype');
   font-weight: 100 900;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Exo 2';
-  src: url('./assets/fonts/Exo2-Italic-VariableFont_wght.ttf') format('truetype');
+  src: url('./assets/fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
   font-weight: 100 900;
   font-style: italic;
 }
@@ -44,6 +44,10 @@ h1 {
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 button {
   @apply px-4 py-2 rounded text-white font-semibold;
 }
@@ -72,324 +76,17 @@ button.secondary {
   @apply p-4 bg-white shadow flex justify-between items-center rounded;
 }
 
-@keyframes gradient-move {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 60% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+.swiper-button-prev,
+.swiper-button-next {
+  color: #E98B07 !important; /* red */
 }
 
-.moving-gradient {
-  @apply bg-gradient-to-l from-blue-600 to-green-500;
-  background-size: 200% 200%; /* Allow the gradient to move */
-  animation: gradient-move 4s ease infinite; /* 4s loop animation */
+.swiper-pagination-bullet {
+  background: #E98B07 !important; /* orange */
+  opacity: 0.5;
 }
 
-.ring-animation {
-  animation: ring 2s infinite;
-  transition: none; /* Prevents animation stopping on hover */
-}
-
-@keyframes ring {
-  0% {
-    box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.5);
-  }
-  50% {
-    box-shadow: 0 0 20px 10px rgba(255, 215, 0, 0.3);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(255, 215, 0, 0);
-  }
-}
-
-/* File: src/components/handCursor.css */
-
-/* Open hand SVG cursor for hover */
-.cursor-svg-open-hand {
-  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 8a4 4 0 0 0-8 0v8a2 2 0 0 0 4 0V8m-6 0v8a2 2 0 0 0 4 0V8M12 8V4'/%3E%3C/svg%3E"), auto;
-}
-
-/* Closed hand SVG cursor for click (active state) */
-.cursor-svg-open-hand:active {
-  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M8 11h3v5a2 2 0 0 0 4 0v-5h3'/%3E%3C/svg%3E"), auto;
-}
-
-/* File: src/components/draggableHand.css */
-
-.hand-icon {
-  position: absolute;
-  cursor: grab;
-  transition: transform 0.1s ease-in-out;
-}
-
-.hand-icon:active {
-  cursor: grabbing;
-}
-
-
-/* THEME */
-
-@layer utilities {
-  .theme-default {
-    background-color: theme('colors.defaultBg');
-    color: theme('colors.defaultText');
-    padding: 20px;
-  }
-  .theme-dark {
-    background-color: theme('colors.darkBg');
-    color: theme('colors.darkText');
-    padding: 20px;
-  }
-  .theme-blue {
-    background-color: theme('colors.blueBg');
-    color: theme('colors.blueText');
-    padding: 20px;
-  }
-  .theme-green {
-    background-color: theme('colors.greenBg');
-    color: theme('colors.greenText');
-    padding: 20px;
-  }
-
-  
-  .button-default {
-    background-color: theme('colors.defaultBg');
-    color: theme('colors.defaultText');
-    border: 2px solid theme('colors.defaultText');
-  }
-  .button-dark {
-    background-color: theme('colors.darkBg');
-    color: theme('colors.darkText');
-    border: 2px solid theme('colors.darkText');
-  }
-  .button-blue {
-    background-color: theme('colors.blueBg');
-    color: theme('colors.blueText');
-    border: 2px solid theme('colors.blueText');
-  }
-  .button-green {
-    background-color: theme('colors.greenBg');
-    color: theme('colors.greenText');
-    border: 2px solid theme('colors.greenText');
-  }
-
-  .button-base {
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-
-  /* Hover Effects */
-  .button-default:hover {
-    background-color: theme('colors.defaultText');
-    color: theme('colors.defaultBg');
-    transform: scale(1.05);
-  }
-  .button-dark:hover {
-    background-color: theme('colors.darkText');
-    color: theme('colors.darkBg');
-    transform: scale(1.05);
-  }
-  .button-blue:hover {
-    background-color: theme('colors.blueText');
-    color: theme('colors.blueBg');
-    transform: scale(1.05);
-  }
-  .button-green:hover {
-    background-color: theme('colors.greenText');
-    color: theme('colors.greenBg');
-    transform: scale(1.05);
-  }
-
-}
-
-/* butterfly */
-.butterfly {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  animation: smooth-flight 3s infinite ease-in-out;
-}
-
-@keyframes smooth-flight {
-  0% {
-    transform: translate(0, 0) rotate(0);
-  }
-  25% {
-    transform: translate(50px, -30px) rotate(15deg);
-  }
-  50% {
-    transform: translate(100px, 50px) rotate(-15deg);
-  }
-  75% {
-    transform: translate(-50px, 30px) rotate(10deg);
-  }
-  100% {
-    transform: translate(0, 0) rotate(0);
-  }
-}
-
-.butterfly-svg {
-  transition: transform 2s ease-in-out;
-}
-
-
-@keyframes left {
-  to {
-    transform: rotateY(-60deg);
-  }
-}
-
-@keyframes right {
-  to {
-    transform: rotateY(-60deg);
-  }
-}
-
-.canvas {
-  width: 734px;
-  height: 741px;
-  position: absolute;
-  left: 40%;
-  top: 78%;
-  transform: translate(-50%, -50%);
-}
-
-@media (max-width: 768px) { /* Adjust max-width as needed for your target devices */
-  .canvas {
-    width: 134px;
-    height: 141px;
-    left: 40%;
-    top: 25%;
-  }
-}
-
-.bf {
-  width: 34px;
-  height: auto;
-  display: flex;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.bf .wing-left,
-.bf .wing-right {
-  width: 50%;
-}
-
-.bf .wing-left svg,
-.bf .wing-right svg {
-  width: 100%;
-  height: auto;
-}
-
-.wing-left {
-  animation: left .7s linear infinite alternate;
-  transform-origin: right;
-}
-
-.wing-right {
-  animation: right .7s linear infinite alternate;
-  transform-origin: left;
-}
-
-.wing-right svg {
-  transform: scaleX(-1);
-}
-
-/* Individual Butterfly Positions */
-.bf-1 {
-  top: 25%;
-  transform: rotate(-8deg);
-}
-
-.bf-2 {
-  width: 10px;
-  left: auto;
-  right: 5%;
-  transform: rotate(20deg);
-}
-
-
-.bf-3 {
-  top: 30%;
-  left: 120%;
-  width: 16px;
-  transform: rotate(-30deg);
-}
-
-
-.bf-4 {
-  top: 50%;
-  width: 20px;
-  left: auto;
-  right: 0;
-  transform: rotate(1deg);
-}
-
-.bf-5 {
-  bottom: 0;
-  width: 28px;
-  left: 40%;
-  transform: rotate(45deg);
-}
-
-
-
-
-.containerrs {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  gap: 24px;
-  margin: 270px 0;
-  height: 2040px;
-  align-items: center;
-}
-
-.cardd {
-  width: 80%;
-  margin: 0 20px;
-  box-sizing: border-box;
-  background: #dedede;
-  min-height: 400px;
-  border-radius: 32px;
-  position: sticky;
-  
-  display:flex;
-  align-items: center;
-  justify-content: center;
-  font-family : 'system-ui', sans-serif;
-  font-size: 90px;
-  font-weight: medium;
-  color: #FFF;
-}
-
-.one {
-  top: 50px;
-  background: #6b04fd;
-}
-.two {
-  top: 80px;
-  background: #5a03d5;
-}
-.three {
-  top: 110px;
-  background: #4b05ad;
-}
-
-.four {
-  top: 140px;
-  background: #2c0076;
+.swiper-pagination-bullet-active {
+  background: #E98B07 !important; /* red */
+  opacity: 1;
 }

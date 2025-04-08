@@ -1,47 +1,32 @@
 import Header from '../components/Home/Header';
-import Hero from '../components/Home/Hero';
-import Features from '../components/Home/Features';
-import CalendarPage from '../components/Calendar/CalendarPage';
+import PlatesCarousel from '../components/Home/PlatesCarousel';
+import Services from '../components/Home/Services';
 import FAQs from "../components/FAQ/FAQ";
-import Section from '../components/Section';
+//import Section from '../components/Section';
 import About from '../components/Home/About';
-import TimelineCarousel from '../components/Home/TimelineCarousel';
+import Contact from '../components/Home/Contact';
+import Team from '../components/Home/Team';
+import CallToActionSection from '../components/Home/CallToActionSection';
+import Description from '../components/Home/Description';
+
+
 
 function HomeScreen() {
  
   return (
       <div>
-        {/* <ThemeSelector/> */}
-        {/* <ButterflyScene/> */}
-        {/* <Navbar /> */}
-        <Section>
-          <Header/>
-        </Section>
-        {/* <Section> */}
-          <About />
-
-        {/* </Section> */}
-        <Section>
-          <CalendarPage />
-        </Section>
-        
-        <Features />
-        <TimelineCarousel />
-
-        <Section>
-          <Hero />
-        </Section>
-        <Section>
-        <FAQs />
-        </Section>
-        
-
-        {/* <Review /> */}
-        {/* <Footer /> */}
+        <Header/>
+        <About />
+        <Description />
+        <Team />
+        <Services />
+        <PlatesCarousel />
+        <CallToActionSection />
+        <Contact />
       </div>
   )
 }
-
+ 
 
 
 export default HomeScreen
