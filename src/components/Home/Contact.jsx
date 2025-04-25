@@ -26,7 +26,7 @@ const contactInfo = [
 
 const ContactSection = () => {
   return (
-    <section className="bg-white py-16 px-6 md:px-20" id="contact">
+    <section className=" py-16 px-6 md:px-20" id="contact">
       <h2 className="text-3xl md:text-4xl font-bold text-center text-[#2B2829] mb-12">Contáctanos</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
         {contactInfo.map((item, index) => (

@@ -50,7 +50,7 @@ const PlatesSection = () => {
       : platesData.filter((plate) => plate.category === selectedCategory);
 
   return (
-    <section className="bg-white py-16 px-6 lg:px-20 text-[#2B2829]">
+    <section className="py-16 px-6 lg:px-20 text-[#2B2829]" id="products">
       <div className="text-center mb-10">
         <h2 className="text-3xl font-bold mb-4 flex justify-center items-center gap-2">
           <FaUtensils className="text-[#E52C35]" /> Nuestros Platos

@@ -2,7 +2,7 @@ import React from "react";
 
 const AboutUs = () => {
   return (
-    <section className="min-h-screen px-6 py-20 lg:px-32 bg-white text-[#2B2829]" id="about">
+    <section className="min-h-screen px-6 py-20 lg:px-32 text-[#2B2829]" id="about">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Text Content */}
         <div>

@@ -2,12 +2,11 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer';
+import WhatsAppButton from './components/WhatsAppButton';
 
 export default function Layout() {
-
-
   return (
-    <div className={` text-base md:text-lg`}>
+    <div className={`text-base md:text-lg`}>
       {/* Navbar at the top */}
       <Navbar />
 
@@ -15,6 +14,9 @@ export default function Layout() {
       <div style={{ minHeight: '80vh'}}>
         <Outlet /> {/* Dynamic content goes here */}
       </div>
+
+      {/* WhatsApp Button */}
+      <WhatsAppButton />
 
       {/* Footer at the bottom */}
       <Footer />
