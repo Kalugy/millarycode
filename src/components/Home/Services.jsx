@@ -4,7 +4,7 @@ const services = [
   {
     title: "Servicio de Coffee Break",
     description: "Ofrecemos coffee breaks completos con opciones dulces y saladas para reuniones, capacitaciones o eventos empresariales.",
-    image: "/images/cocktail.webp"
+    image: "/images/coffee.jpg"
   },
   {
     title: "Almuerzos y Cenas Ejecutivas",
@@ -14,12 +14,12 @@ const services = [
   {
     title: "Cenas Experiencias",
     description: "Cenas temáticas que fusionan gastronomía y cultura, ofreciendo una experiencia inolvidable para tus invitados.",
-    image: "/images/Millary6.webp"
+    image: "/images/Millary7.webp"
   },
   {
     title: "Cocktail para Distintas Actividades",
     description: "Cocktails sofisticados con variedad de bocados y bebidas, ideales para eventos sociales y empresariales.",
-    image: "/images/Millary7.webp"
+    image: "/images/Millary6.webp"
   }
 ];
 
@@ -33,7 +33,7 @@ const ServicesSection = () => {
             <img 
               src={service.image} 
               alt={service.title} 
-              className="w-full md:w-48 h-48 object-cover rounded-xl"
+              className="w-full md:w-36 h-44 object-cover rounded-xl"
             />
             <div>
               <h3 className="text-xl font-semibold text-[#E98B07] mb-2">{service.title}</h3>

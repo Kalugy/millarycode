@@ -13,20 +13,18 @@ const Navbar = () => {
   ];
  
   const handleMenuClick = () => {
-    setMobileMenuOpen(false); // Close the menu
+    setMobileMenuOpen(false);
   };
 
 
   return (
-    <nav
-      className={`absolute top-0 left-0 w-full z-50 transition duration-300 bg-transparent text-white`}
-    >
-      <div className="flex items-center justify-between px-4 py-1 xl:px-80 ">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-sm shadow-sm">
+      <div className="flex items-center justify-between px-4 py-1 xl:px-80">
         {/* Logo */}
         <NavLink className="cursor-pointer" to="/" >
           <div className="flex ml-1 md:ml-9 align-middle items-center">
-            <img src="/images/onlyLogo.webp" alt="Logo" className="h-12 " />
-            <h1 className={`text-xs md:text-lg xl:text-2xl italic font-bold ml-2 `}>
+            <img src="/images/onlyLogo.webp" alt="Logo" className="h-12" />
+            <h1 className="text-xs md:text-lg xl:text-2xl italic font-bold ml-2 text-gray-800">
               Millary
             </h1>
           </div>
@@ -39,18 +37,15 @@ const Navbar = () => {
                 key={item.name} 
                 href={item.href} 
                 target="_blank"
-                className={`px-4 py-2 rounded transition px-4 py-2 rounded bg-[#E52C35] font-bold text-white hover:bg-red-700 hover:opacity-90`}
-                //activeStyle={styles.activeLink}
-                
-                >
+                className="px-4 py-2 rounded bg-[#E52C35] font-bold text-white hover:bg-red-700 hover:opacity-90 transition"
+              >
                 {item.name}
               </a>
             ) : (
               <a
                 key={item.name}
                 href={item.href}
-
-                className={`font-semibold `}
+                className="font-semibold text-gray-800 hover:text-gray-600 transition"
               > 
                 {item.name}
               </a>
@@ -60,7 +55,7 @@ const Navbar = () => {
 
         {/* Mobile Burger Button */}
         <button
-          className={`md:hidden text-xl `}
+          className="md:hidden text-xl text-gray-800"
           onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
         >
           ☰
@@ -69,46 +64,55 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed overflow-y-hidden top-0 left-0 w-screen h-full transform transition-transform duration-500 ease-in-out ${
-          isMobileMenuOpen ? "translate-y-0" : "-translate-y-full"
-        } bg-[#2B2829]`}
+        className={`fixed top-0 left-0 w-full h-screen bg-white transform transition-transform duration-300 ease-in-out ${
+          isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
+        } md:hidden z-50`}
       >
-        <BackgroundCircle />
-          
-        <button
-          onClick={() => setMobileMenuOpen(false)}
-          className={`absolute top-4 right-6 text-3xl `}
-        >
-          ✕
-        </button>
-        <ul className="flex flex-col items-center justify-center gap-6 h-full">
-          {menuItems.map((item) =>
-            item.isButton ? (
-              <></>
-              // <li key={item.name}>
-              //   <a
-              //     href={item.href}
-              //     onClick={handleMenuClick} // Close the menu on click
-              //     className={`px-6 py-3 rounded transition button-${theme} ${themeStyles[theme].navbarText} hover:opacity-90`}
-              //   >
-              //     {item.name}
-              //   </a>
-              // </li>
-            ) : (
-              <li key={item.name}>
-                <a
-                  href={item.href}
+        <div className="flex flex-col h-full">
+          {/* Mobile Menu Header */}
+          <div className="flex justify-between items-center p-4 border-b">
+            <NavLink to="/" onClick={() => setMobileMenuOpen(false)}>
+              <div className="flex items-center">
+                <img src="/images/onlyLogo.webp" alt="Logo" className="h-10" />
+                <h1 className="text-lg font-bold ml-2 text-gray-800">Millary</h1>
+              </div>
+            </NavLink>
+            <button
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-2xl text-gray-800"
+            >
+              ✕
+            </button>
+          </div>
 
-                  onClick={handleMenuClick} // Close the menu on click
-                  className={`text-lg font-semibold  transition `}
-               
-                >
-                  {item.name}
-                </a>
-              </li>
-            )
-          )}
-        </ul>
+          {/* Mobile Menu Items */}
+          <ul className="flex flex-col items-center justify-center gap-8 p-4">
+            {menuItems.map((item) =>
+              item.isButton ? (
+                <li key={item.name} className="w-full">
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    onClick={handleMenuClick}
+                    className="block w-full px-6 py-3 text-center rounded bg-[#E52C35] font-bold text-white hover:bg-red-700 transition"
+                  >
+                    {item.name}
+                  </a>
+                </li>
+              ) : (
+                <li key={item.name} className="w-full">
+                  <a
+                    href={item.href}
+                    onClick={handleMenuClick}
+                    className="block w-full px-6 py-3 text-center text-lg font-semibold text-gray-800 hover:text-gray-600 transition"
+                  >
+                    {item.name}
+                  </a>
+                </li>
+              )
+            )}
+          </ul>
+        </div>
       </div>
     </nav>
   );
@@ -119,7 +123,7 @@ const BackgroundCircle = () => {
     <div
       className="absolute top-5 left-5 w-12 h-12 bg-cover bg-center"
       style={{
-        backgroundImage: "url('/images/logo.png')", // Replace with your image path
+        backgroundImage: "url('/images/onlyLogo.webp')", // Replace with your image path
       }}
     ></div>
   );

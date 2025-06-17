@@ -9,9 +9,10 @@ import "swiper/css/pagination";
 const teamMembers = [
   {
     name: "Juan Quiñeman",
-    role: "Cocinero Mapuche",
+    role: "Líder Millary",
     image: "/images/chef.webp",
-    bio: "Amante de los sabores dulces de la Araucanía. Innovación con ingredientes nativos, sabores ancestrales y los productos regionales.",
+    bio: "Destacado cocinero chileno con más de 25 años de trayectoria. Ha sido chef ejecutivo en importantes hoteles como Sheraton Miramar, Hotel Antay y la cadena Marriott. Actualmente lidera Millary, empresa de agroturismo y banquetería con enfoque en productos de temporada, cocina sustentable y gastronomía mapuche.",
+    bio2: "Es miembro de la Asociación de Chefs de Chile “Les Toques Blanches”, socio de la Sociedad de Turismo Mapuche y parte del comité que impulsó la creación del Día de la Gastronomía Mapuche (26 de octubre).",
     social: {
       instagram: "https://www.instagram.com/chef.juanquineman/",
       facebook: "https://web.facebook.com/juan.quineman",
@@ -19,10 +20,11 @@ const teamMembers = [
     },
   },
   {
-    name: "Carlos Méndez",
-    role: "Sous Chef",
-    image: "https://foodservice.aoachile.com/wp-content/uploads/2025/01/pro-removebg-preview.png",
-    bio: "Enfocado en técnicas tradicionales y recolección de productos estacionales como piñones y hierbas frescas.",
+    name: "Grace Correa",
+    role: "Líder de anfitriones y jefa de garzones en Millary",
+    image: "/images/grace.jpg",
+    bio: "Con más de 15 años de experiencia en el sector hotelero, destaca por su calidez, empatía y excepcional vocación de servicio. Con una sólida trayectoria en atención al cliente, lidera con profesionalismo y cercanía a su equipo, garantizando una experiencia acogedora, eficiente y de alto nivel en cada evento.",
+    bio2: "Su compromiso, capacidad organizativa y estilo de liderazgo humano la convierten en una figura clave en la excelencia y el sello distintivo de hospitalidad que caracterizan a Millary.",
     social: {
       instagram: "https://instagram.com",
       facebook: "https://facebook.com",
@@ -30,21 +32,11 @@ const teamMembers = [
     },
   },
   {
-    name: "Valentina Ruiz",
-    role: "Chef de Cocina Vegana",
-    image: "https://foodservice.aoachile.com/wp-content/uploads/2025/01/pro-removebg-preview.png",
-    bio: "Creadora de platos basados en quinoa, papas nativas y sabores auténticos de la región.",
-    social: {
-      instagram: "https://instagram.com",
-      facebook: "https://facebook.com",
-      linkedin: "https://linkedin.com",
-    },
-  },
-  {
-    name: "Andrés Soto",
-    role: "Experto en Maridaje",
-    image: "https://foodservice.aoachile.com/wp-content/uploads/2025/01/pro-removebg-preview.png",
-    bio: "Fusiona sabores con bebidas artesanales para lograr una experiencia sensorial inolvidable.",
+    name: "Rita Allilef",
+    role: "Líder de anfitriones y jefa de garzones en Millary",
+    image: "/images/rita.jpg",
+    bio: "Con más de 15 años de trayectoria en el mundo gastronómico, habiendo trabajado en destacadas cocinas como las del Hotel Hyatt, Hotel & Casino Monticello y Hacienda Santa Martina, entre otras. Reconocida cocinera mapuche, es autora del libro 'El Alma de lo Nuestro', donde plasma su profunda conexión con la cocina ancestral.",
+    bio2: "Apasionada promotora de la cultura y gastronomía mapuche, Rita participa activamente en eventos, talleres y experiencias culinarias que ponen en valor nuestras raíces y tradiciones.",
     social: {
       instagram: "https://instagram.com",
       facebook: "https://facebook.com",
@@ -92,7 +84,7 @@ const TeamSection = () => {
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-fill"
                 />
               </div>
               <h3 className="text-xl font-bold text-[#2B2829] mb-1">
@@ -100,7 +92,7 @@ const TeamSection = () => {
               </h3>
               <p className="text-[#E52C35] font-medium mb-2">{member.role}</p>
               <p className="text-gray-700 text-sm leading-relaxed mb-4">{member.bio}</p>
-
+              <p className="text-gray-700 text-sm leading-relaxed mb-4">{member.bio2}</p>
               <div className="flex gap-4 justify-center mt-auto">
                 <a href={member.social.instagram} target="_blank" rel="noopener noreferrer" className="text-[#E52C35] hover:text-[#E52C35] text-xl transition">
                   <FaInstagram />

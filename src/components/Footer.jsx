@@ -62,7 +62,7 @@ const Footer = () => {
         <div>
           <h3 className="font-semibold text-[#E98B07] text-lg mb-4">Ubicación</h3>
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26452.634841062063!2d-71.11349972983665!3d-34.02900683520943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96630d03dcea2f2b%3A0x96c4c35366c3e4a7!2sAlhue%2C%20Alhu%C3%A9%2C%20Regi%C3%B3n%20Metropolitana%2C%20Chile!5e0!3m2!1ses-419!2sco!4v1745266615732!5m2!1ses-419!2sco"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1596481.563180487!2d-73.49232901454828!3d-38.599922785688136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9614b2c8d0e8c75d%3A0x31dd188520a10606!2sAraucania%2C%20Chile!5e0!3m2!1sen!2sco!4v1750196331332!5m2!1sen!2sco"
             width="100%"
             height="120"
             style={{ border: 0 }}

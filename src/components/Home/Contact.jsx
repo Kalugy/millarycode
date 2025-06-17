@@ -20,7 +20,7 @@ const contactInfo = [
   {
     icon: <FaMapMarkerAlt className="text-[#E52C35] text-2xl" />, // Rojo
     title: "Ubicación",
-    value: "Santiago, Chile"
+    value: "Novena region Araucania, Chile"
   },
 ];
 

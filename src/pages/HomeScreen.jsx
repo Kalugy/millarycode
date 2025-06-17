@@ -19,12 +19,12 @@ function HomeScreen() {
         <Description />
         <Team />
         
-        <CallToActionSection />
+        <Contact />
+        {/* <CallToActionSection /> */}
         <Services />
         <PlatesCarousel />
         
         <Dishes />
-        <Contact />
       </div>
   )
 }
