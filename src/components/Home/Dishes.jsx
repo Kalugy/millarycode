@@ -13,7 +13,7 @@ function Dishes() {
         </p>
         <div className="flex justify-center gap-4">
           <a href="https://wa.link/q8rlm1" target="_blank" className="bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600">
-            Ordena Ahora!
+            Contactanos!
           </a>
           <a href="https://wa.link/q8rlm1" target="_blank" className="flex items-center text-orange-500 font-semibold">
             Conoce más
@@ -70,9 +70,7 @@ function Dishes() {
           </div>
           <h3 className="text-lg font-semibold text-gray-800 py-4">Gastronomía Mapuche</h3>
           {/* <p className="text-orange-500 text-xl mt-2">$35</p> */}
-          <button className="absolute top-1/2 right-4 bg-[#EA580C] text-white rounded-full p-2 hover:bg-red-600">
-            🛒
-          </button>
+          
         </div>
       </div>
     </div>

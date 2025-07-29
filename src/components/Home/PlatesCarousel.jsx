@@ -90,7 +90,7 @@ const PlatesSection = () => {
               className="w-full h-46 object-cover"
             />
             <div className="p-4">
-              <h3 className="text-lg font-bold text-[#E98B07]">{plate.title}</h3>
+              {/* <h3 className="text-lg font-bold text-[#E98B07]">{plate.title}</h3> */}
             </div>
           </div>
         ))}

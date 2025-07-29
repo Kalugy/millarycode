@@ -6,7 +6,7 @@ const AboutUsDescription = () => {
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
         {/* Image Section */}
         <div className="lg:w-1/2 relative order-1 lg:order-none">
-          <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-[#E98B07]">
+          <div className="rounded-3xl overflow-hidden shadow-2xl ">
             <img
               src="/images/Millary1.webp"
               alt="Nuestra cocina"

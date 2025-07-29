@@ -20,7 +20,7 @@ const HomeHero = () => {
           target="_blank"
           className="bg-[#E52C35] hover:bg-[#c5252d] text-white px-6 py-3 rounded font-medium transition duration-300"
         >
-          Reserva ahora
+          CONVERSEMOS
         </Link>
       </div>
     </section>
